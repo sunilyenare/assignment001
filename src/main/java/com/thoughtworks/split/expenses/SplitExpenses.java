@@ -16,6 +16,6 @@ public class SplitExpenses {
     }
 
     public double spendDetail() {
-        return amount;
+        return amount= amount/groupList.size();
     }
 }
