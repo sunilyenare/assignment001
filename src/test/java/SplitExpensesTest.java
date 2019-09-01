@@ -10,7 +10,7 @@ public class SplitExpensesTest {
     void givenZeroMember_WhenAdded_ThenShouldReturnZeroExpenses(){
         List<String> groupList=new ArrayList<String>();
         SplitExpenses manager=new SplitExpenses(" ",0.0f,groupList);
-        Assertions.assertEquals(0.0f,manager.spendDetail());
+        Assertions.assertEquals(0.0f,manager.checkSpendDetail());
     }
 
 
@@ -19,7 +19,7 @@ public class SplitExpensesTest {
         List<String> groupList=new ArrayList<String>();
         groupList.add("A");
         SplitExpenses manager=new SplitExpenses("A",10.0f,groupList);
-        Assertions.assertEquals(10.0,manager.spendDetail());
+        Assertions.assertEquals(10.0,manager.checkSpendDetail());
         groupList.clear();
     }
 
@@ -29,7 +29,7 @@ public class SplitExpensesTest {
         groupList.add("A");
         groupList.add("B");
         SplitExpenses manager=new SplitExpenses("A",100.0f,groupList);
-        Assertions.assertEquals(50.0,manager.spendDetail());
+        Assertions.assertEquals(50.0,manager.checkSpendDetail());
         groupList.clear();
     }
 

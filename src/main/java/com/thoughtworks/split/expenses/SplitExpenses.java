@@ -15,7 +15,7 @@ public class SplitExpenses {
         this.groupList = groupList;
     }
 
-    public float spendDetail() {
+    public float checkSpendDetail() {
 
         List<String> totalMember = groupList;
         float amountToBePaid = 0.0f;
