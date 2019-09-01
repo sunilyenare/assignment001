@@ -15,7 +15,7 @@ public class SplitExpensesTest {
 
 
     @Test
-    void givenOneMember_WhenAddedZeroAmount_ThenShouldReturnZeroExpenses(){
+    void givenOneMember_WhenAddedAmount_ThenShouldReturnExpenses(){
         List<String> groupList=new ArrayList<String>();
         groupList.add("A");
         SplitExpenses manager=new SplitExpenses("A",10.0f,groupList);
@@ -57,4 +57,8 @@ public class SplitExpensesTest {
         groupList.clear();
 
     }
+
+    @Test
+    void given
+
 }
