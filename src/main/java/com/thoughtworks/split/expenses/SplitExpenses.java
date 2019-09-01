@@ -5,17 +5,26 @@ import java.util.List;
 public class SplitExpenses {
 
     private String payer;
-    private double amount;
+    private float amount;
     private List<String> groupList;
 
-    public SplitExpenses(String payer, double amount, List<String> groupList) {
+    public SplitExpenses(String payer, float amount, List<String> groupList) {
 
         this.payer=payer;
         this.amount=amount;
         this.groupList=groupList;
     }
 
-    public double spendDetail() {
-        return amount= amount/groupList.size();
+    public float spendDetail() {
+        List<String> totalMember=groupList;
+
+        float amountToBePaid=0.0f;
+        int dividableCount=totalMember.size();
+
+        if(amount==0) return amountToBePaid;
+
+        amountToBePaid = amount / dividableCount;
+
+        return amountToBePaid;
     }
 }
