@@ -10,21 +10,30 @@ public class SplitExpenses {
 
     public SplitExpenses(String payer, float amount, List<String> groupList) {
 
-        this.payer=payer;
-        this.amount=amount;
-        this.groupList=groupList;
+        this.payer = payer;
+        this.amount = amount;
+        this.groupList = groupList;
     }
 
     public float spendDetail() {
-        List<String> totalMember=groupList;
+        List<String> totalMember = groupList;
 
-        float amountToBePaid=0.0f;
-        int dividableCount=totalMember.size();
+        float amountToBePaid = 0.0f;
+        int dividableCount = totalMember.size();
 
-        if(amount==0) return amountToBePaid;
+        if (amount == 0) return amountToBePaid;
 
         amountToBePaid = amount / dividableCount;
-
+        boolean ifPayerIsMember = checkIfPayerIsMember();
         return amountToBePaid;
+    }
+
+    public boolean checkIfPayerIsMember() {
+
+        boolean ifPayerIsMember = false;
+        if (groupList.contains(payer)) ifPayerIsMember = true;
+
+        return ifPayerIsMember;
+
     }
 }

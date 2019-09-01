@@ -28,15 +28,21 @@ public class SplitExpensesTest {
         List<String> groupList=new ArrayList<String>();
         groupList.add("A");
         groupList.add("B");
-        SplitExpenses manager=new SplitExpenses("A",10.0f,groupList);
-        Assertions.assertEquals(5.0,manager.spendDetail());
+        SplitExpenses manager=new SplitExpenses("A",100.0f,groupList);
+        Assertions.assertEquals(50.0,manager.spendDetail());
         groupList.clear();
     }
-//    @Test
-//    void givenZeroAmount_WhenCalculateExpenses_ThenShouldReturnZero(){
-//
-//        SplitExpenses splitExpenses=new SplitExpenses();
-//        Assertions.assertEquals(0.00,splitExpenses.);
-//
-//    }
+
+    @Test
+    void givenMemberIsPayer_WhenAdded_ThenShouldReturnTrue(){
+        List<String> groupList=new ArrayList<String>();
+        groupList.add("A");
+        groupList.add("B");
+        groupList.add("C");
+        groupList.add("D");
+        SplitExpenses manager=new SplitExpenses("B",100.0f,groupList);
+        Assertions.assertEquals(true,manager.checkIfPayerIsMember());
+        groupList.clear();
+
+    }
 }
