@@ -3,10 +3,19 @@ package com.thoughtworks.split.expenses;
 import java.util.List;
 
 public class SplitExpenses {
-    public SplitExpenses(String s, int i, List<String> groupList) {
+
+    private String payer;
+    private double amount;
+    private List<String> groupList;
+
+    public SplitExpenses(String payer, double amount, List<String> groupList) {
+
+        this.payer=payer;
+        this.amount=amount;
+        this.groupList=groupList;
     }
 
-    public int spendDetail() {
-        return 0;
+    public double spendDetail() {
+        return amount;
     }
 }
