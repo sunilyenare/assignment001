@@ -45,4 +45,16 @@ public class SplitExpensesTest {
         groupList.clear();
 
     }
+    @Test
+    void givenMemberIsPayer_WhenAdded_ThenShouldRemoved(){
+        List<String> groupList=new ArrayList<String>();
+        groupList.add("A");
+        groupList.add("B");
+        groupList.add("C");
+        groupList.add("D");
+        SplitExpenses manager=new SplitExpenses("A",100.0f,groupList);
+        Assertions.assertEquals(true,manager.checkIfPayerIsMember());
+        groupList.clear();
+
+    }
 }
