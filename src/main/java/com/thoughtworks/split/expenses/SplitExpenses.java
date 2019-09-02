@@ -20,15 +20,15 @@ public class SplitExpenses {
 
         List<String> totalMember = groupList;
         float amountToBePaid = 0.0f;
-        int dividableCount=totalMember.size();
 
-        if(!payerPartOfExpense)dividableCount=totalMember.size()-1;
+        if (checkIfPayerIsMember()&&(!payerPartOfExpense)) totalMember.remove(payerName);
+
+
 
         if (amount == 0) return amountToBePaid;
 
-        amountToBePaid = amount / dividableCount;
+        amountToBePaid = amount / totalMember.size();
 
-        if (checkIfPayerIsMember()) totalMember.remove(payerName);
 
             settleAccount(amountToBePaid);
         return amountToBePaid;
