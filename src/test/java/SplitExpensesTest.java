@@ -34,7 +34,7 @@ public class SplitExpensesTest {
     }
 
     @Test
-    void givenMemberIsPayer_WhenAdded_ThenShouldReturnTrue(){
+    void givenCheckMemberIsPayer_WhenAdded_ThenShouldReturnTrue(){
         List<String> groupList=new ArrayList<String>();
         groupList.add("A");
         groupList.add("B");
@@ -46,20 +46,22 @@ public class SplitExpensesTest {
 
     }
     @Test
-    void givenMemberIsPayer_WhenAdded_ThenShouldRemoved(){
+    void givenMemberIsPayer_WhenAdded_ThenShouldReturnEqualSplitExpenses(){
         List<String> groupList=new ArrayList<String>();
         groupList.add("A");
         groupList.add("B");
         groupList.add("C");
         groupList.add("D");
-        SplitExpenses manager=new SplitExpenses("A",false,100.0f,groupList);
-        Assertions.assertEquals(true,manager.checkIfPayerIsMember());
+        groupList.add("E");
+        groupList.add("F");
+        SplitExpenses manager=new SplitExpenses("A",true,360.0f,groupList);
+        Assertions.assertEquals(60,manager.checkSpendDetail());
         groupList.clear();
 
     }
 
     @Test
-    void givenMembersIsPayerButNotAPartOfExpense_WhenAdded_ThenShouldReturnNotEqualSplit(){
+    void givenMembersIsPayerButNotAPartOfExpense_WhenAdded_ThenShouldReturnNotEqualSplitExpenses(){
         List<String> groupList=new ArrayList<String>();
         groupList.add("A");
         groupList.add("B");
