@@ -59,6 +59,16 @@ public class SplitExpensesTest {
     }
 
     @Test
-    void given
+    void givenMembersGetEqualAmount_WhenAdded_ThenShouldReturnTrue(){
+        List<String> groupList=new ArrayList<String>();
+        groupList.add("A");
+        groupList.add("B");
+        groupList.add("C");
+        groupList.add("D");
+        SplitExpenses manager=new SplitExpenses("A",100.0f,groupList);
+        Assertions.assertEquals(true,manager.settleAccount());
+        groupList.clear();
+
+    }
 
 }
